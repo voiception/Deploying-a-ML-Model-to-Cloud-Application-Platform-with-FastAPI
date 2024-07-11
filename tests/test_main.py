@@ -19,21 +19,19 @@ def test_welcome():
 
 
 valid_test_cases = [
-    ({"age": 28, "workclass": "Self-emp-not-inc", "fnlgt": 204519, "education": "Masters", "education-num": 14,
-      "marital-status": "Married-spouse-absent", "occupation": "Exec-managerial", "relationship": "Wife", "race": "Asian-Pac-Islander",
-      "sex": "Female", "capital-gain": 0, "capital-loss": 0, "hours-per-week": 50, "native-country": "India"},
-     [0]),
-
-    ({"age": 37, "workclass": "Local-gov", "fnlgt": 149184, "education": "Doctorate", "education-num": 16,
-      "marital-status": "Separated", "occupation": "Prof-specialty", "relationship": "Not-in-family",
-      "race": "Black", "sex": "Male", "capital-gain": 7688, "capital-loss": 0, "hours-per-week": 38,
-      "native-country": "Canada"},
-     [1]),
-
-    ({"age": 53, "workclass": "State-gov", "fnlgt": 204018, "education": "Assoc-acdm", "education-num": 12,
-      "marital-status": "Widowed", "occupation": "Tech-support", "relationship": "Own-child", "race": "Other",
-      "sex": "Female", "capital-gain": 0, "capital-loss": 0, "hours-per-week": 45, "native-country": "Mexico"},
-     [0]),
+    ({"age": 36, "workclass": "Private", "fnlgt": 484024, "education": "HS-grad", "education-num": 9,
+      "marital-status": "Divorced", "occupation": "Machine-op-inspct", "relationship": "Unmarried", "race": "White",
+      "sex": "Male", "capital-gain": 0, "capital-loss": 0, "hours-per-week": 40, "native-country": "United-States"},
+     [0]),  # Test case for prediction: <=50K
+    ({"age": 44, "workclass": "Private", "fnlgt": 75227, "education": "Prof-school", "education-num": 15,
+      "marital-status": "Never-married", "occupation": "Prof-specialty", "relationship": "Not-in-family",
+      "race": "White", "sex": "Male", "capital-gain": 14084, "capital-loss": 0, "hours-per-week": 40,
+      "native-country": "United-States"},
+     [1]),  # Test case for prediction: >50K
+    ({"age": 62, "workclass": "Private", "fnlgt": 664366, "education": "Bachelors", "education-num": 13,
+      "marital-status": "Married-civ-spouse", "occupation": "Sales", "relationship": "Husband", "race": "White",
+      "sex": "Male", "capital-gain": 0, "capital-loss": 0, "hours-per-week": 60, "native-country": "United-States"},
+     [0]),  # Test case for prediction: <=50K
 ]
 
 
