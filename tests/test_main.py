@@ -15,7 +15,7 @@ test_client = TestClient(app)
 def test_welcome():
     response = test_client.get("/")
     assert response.status_code == 200
-    assert response.json() == {"message": "Hello! Welcome to ML Cloud API"}
+    assert response.json() == {"message": "Welcome to the ML model inference API"}
 
 
 valid_test_cases = [
@@ -34,19 +34,16 @@ valid_test_cases = [
      [0]),  # Test case for prediction: <=50K
 ]
 
-
 invalid_test_cases = [
-    ({"age": "thirty-two", "workclass": "Private", "fnlgt": 305920, "education": "Bachelors", "education-num": 13,
-      "marital-status": "Separated", "occupation": "Adm-clerical", "relationship": "Not-in-family", "race": "Black",
-      "sex": "Female", "capital-gain": 0, "capital-loss": 0, "hours-per-week": 40, "native-country": "Philippines"}),
-
-    ({"age": 44, "workclass": "Private", "fnlgt": 185173, "education": True, "education-num": 10,
-      "marital-status": "Married-civ-spouse", "occupation": "Sales", "relationship": "Husband", "race": "White",
-      "sex": "Male", "capital-gain": 0, "capital-loss": 0, "hours-per-week": 35, "native-country": "Germany"}),
-
-    ({"age": 29, "workclass": "Federal-gov", "fnlgt": 98293, "education": "Some-college", "education-num": 10,
-      "marital-status": "Married-AF-spouse", "occupation": "Handlers-cleaners", "relationship": "Husband", "race": "White",
-      "sex": "Male"})
+    ({"age": "invalid", "workclass": "Private", "fnlgt": 484024, "education": "HS-grad", "education-num": 9,
+      "marital-status": "Divorced", "occupation": "Machine-op-inspct", "relationship": "Unmarried", "race": "White",
+      "sex": "Male", "capital-gain": 0, "capital-loss": 0, "hours-per-week": 40, "native-country": "United-States"}),
+    ({"age": 36, "workclass": "Private", "fnlgt": 484024, "education": 50, "education-num": 9,
+      "marital-status": "Divorced", "occupation": "Machine-op-inspct", "relationship": "Unmarried", "race": "White",
+      "sex": "Male", "capital-gain": 0, "capital-loss": 0, "hours-per-week": 40, "native-country": "United-States"}),
+    ({"age": 36, "workclass": "Private", "fnlgt": 484024, "education": "HS-grad", "education-num": 9,
+      "marital-status": "Divorced", "occupation": "Machine-op-inspct", "relationship": "Unmarried", "race": "White",
+      "sex": "Male"}),
 ]
 
 
